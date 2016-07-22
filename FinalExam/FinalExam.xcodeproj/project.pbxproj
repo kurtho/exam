@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27A38B3DBA3F5793CA17B949 /* Pods_FinalExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC142E8A9A03FF315375E82 /* Pods_FinalExam.framework */; };
+		293D7B5A1D4246DC005A87A0 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293D7B591D4246DC005A87A0 /* AddBookViewController.swift */; };
 		294FE1EF1D41EDA900EAF8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FE1EE1D41EDA900EAF8AD /* AppDelegate.swift */; };
 		294FE1F11D41EDA900EAF8AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FE1F01D41EDA900EAF8AD /* ViewController.swift */; };
 		294FE1F41D41EDA900EAF8AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294FE1F21D41EDA900EAF8AD /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		157CAFA154CDDC8C3A151955 /* Pods-FinalExam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalExam.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalExam/Pods-FinalExam.release.xcconfig"; sourceTree = "<group>"; };
 		264CAC9CEC017F188C7EE1D3 /* Pods-FinalExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalExam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalExam/Pods-FinalExam.debug.xcconfig"; sourceTree = "<group>"; };
+		293D7B591D4246DC005A87A0 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		294FE1EB1D41EDA900EAF8AD /* FinalExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		294FE1EE1D41EDA900EAF8AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		294FE1F01D41EDA900EAF8AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				294FE1F01D41EDA900EAF8AD /* ViewController.swift */,
 				294FE1F21D41EDA900EAF8AD /* Main.storyboard */,
 				294FE2021D41F6A100EAF8AD /* BookTableViewCell.swift */,
+				293D7B591D4246DC005A87A0 /* AddBookViewController.swift */,
 				294FE1F51D41EDA900EAF8AD /* Assets.xcassets */,
 				294FE1F71D41EDA900EAF8AD /* LaunchScreen.storyboard */,
 				294FE1FA1D41EDA900EAF8AD /* Info.plist */,
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				294FE1F11D41EDA900EAF8AD /* ViewController.swift in Sources */,
+				293D7B5A1D4246DC005A87A0 /* AddBookViewController.swift in Sources */,
 				294FE2031D41F6A100EAF8AD /* BookTableViewCell.swift in Sources */,
 				294FE1EF1D41EDA900EAF8AD /* AppDelegate.swift in Sources */,
 			);
