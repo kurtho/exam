@@ -102,6 +102,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //
 //    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Cell" {
+            let vc = segue.destinationViewController as! DetailBookTableViewController
+            
+            vc.imageBook = bookArray
+        }
+    }
+
+    
+    
+    
     
 }
 
