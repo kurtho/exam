@@ -82,14 +82,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="X6B-zU-toz">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="iBG-PL-hUn">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="95g-Vv-Lqr">
-                                <rect key="frame" x="254" y="7" width="50" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="95g-Vv-Lqr">
+                                <rect key="frame" x="282" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBook" destination="95g-Vv-Lqr" id="vmY-JE-qIG"/>
                         <outlet property="tableView" destination="Vf3-uJ-hMu" id="EXv-vN-IYE"/>
                     </connections>
                 </viewController>
@@ -106,7 +106,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Section-1" id="7dD-qM-iwI">
+                            <tableViewSection headerTitle=" " id="7dD-qM-iwI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="253" id="gOS-4i-MUb">
                                         <rect key="frame" x="0.0" y="92" width="320" height="253"/>
@@ -379,6 +379,11 @@
                                     <action selector="updateButton:" destination="sF4-1e-8RK" eventType="touchUpInside" id="buy-dM-ahU"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N2h-QO-7PL">
+                                <rect key="frame" x="28" y="302" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -386,6 +391,8 @@
                             <constraint firstItem="5eo-Gx-Me0" firstAttribute="top" secondItem="HTp-PB-tnO" secondAttribute="bottom" constant="8" symbolic="YES" id="2sP-5M-ZSB"/>
                             <constraint firstItem="LF4-aF-11W" firstAttribute="top" secondItem="gPw-g1-2cK" secondAttribute="bottom" constant="48" id="2vY-YU-Ifq"/>
                             <constraint firstItem="HTp-PB-tnO" firstAttribute="top" secondItem="vSZ-Me-NlB" secondAttribute="bottom" constant="8" symbolic="YES" id="6ph-ZH-XWB"/>
+                            <constraint firstItem="N2h-QO-7PL" firstAttribute="top" secondItem="Xo6-YB-6kz" secondAttribute="bottom" constant="8" id="6r6-HY-8pF"/>
+                            <constraint firstItem="N2h-QO-7PL" firstAttribute="centerX" secondItem="Xo6-YB-6kz" secondAttribute="centerX" id="8ZD-sg-Ai9"/>
                             <constraint firstItem="SxS-3I-Xhn" firstAttribute="top" secondItem="Xo6-YB-6kz" secondAttribute="bottom" constant="142" id="Cda-p5-RUN"/>
                             <constraint firstItem="HTp-PB-tnO" firstAttribute="leading" secondItem="5eo-Gx-Me0" secondAttribute="leading" id="HXD-w7-3uV"/>
                             <constraint firstItem="SxS-3I-Xhn" firstAttribute="centerX" secondItem="toz-KN-e5x" secondAttribute="centerX" id="IAa-Fv-OoF"/>
@@ -395,16 +402,19 @@
                             <constraint firstItem="LF4-aF-11W" firstAttribute="trailing" secondItem="vSZ-Me-NlB" secondAttribute="trailing" id="RDw-OM-j1U"/>
                             <constraint firstItem="vSZ-Me-NlB" firstAttribute="leading" secondItem="HTp-PB-tnO" secondAttribute="leading" id="TLt-hQ-Y2F"/>
                             <constraint firstItem="vSZ-Me-NlB" firstAttribute="trailing" secondItem="HTp-PB-tnO" secondAttribute="trailing" id="UuL-a7-6Bp"/>
+                            <constraint firstItem="N2h-QO-7PL" firstAttribute="leading" secondItem="toz-KN-e5x" secondAttribute="leadingMargin" constant="12" id="X8Z-gb-3iY"/>
                             <constraint firstItem="5eo-Gx-Me0" firstAttribute="leading" secondItem="Xo6-YB-6kz" secondAttribute="leading" id="fRq-Yx-ONC"/>
                             <constraint firstItem="5eo-Gx-Me0" firstAttribute="trailing" secondItem="Xo6-YB-6kz" secondAttribute="trailing" id="kF8-db-IJg"/>
                             <constraint firstItem="HTp-PB-tnO" firstAttribute="trailing" secondItem="5eo-Gx-Me0" secondAttribute="trailing" id="m6C-kF-HDQ"/>
                             <constraint firstItem="LF4-aF-11W" firstAttribute="trailing" secondItem="toz-KN-e5x" secondAttribute="trailingMargin" id="yjJ-nK-yUS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N2h-QO-7PL" secondAttribute="trailing" constant="-4" id="zP2-ck-kL9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mBj-6b-P9E"/>
                     <connections>
                         <outlet property="ImageTextView" destination="HTp-PB-tnO" id="qnz-Hb-lSz"/>
                         <outlet property="addressTextView" destination="vSZ-Me-NlB" id="0TO-RQ-SsT"/>
+                        <outlet property="introTextView" destination="N2h-QO-7PL" id="O1B-pn-ON7"/>
                         <outlet property="nameTextView" destination="LF4-aF-11W" id="rJ6-Sj-Bd7"/>
                         <outlet property="phoneTextView" destination="5eo-Gx-Me0" id="cey-06-rNi"/>
                         <outlet property="webTextView" destination="Xo6-YB-6kz" id="cvc-1H-CHN"/>
@@ -412,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ir1-Mz-ExN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003.1999999999999" y="-118.33333333333333"/>
+            <point key="canvasLocation" x="1003" y="-119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ajj-sm-0U8">

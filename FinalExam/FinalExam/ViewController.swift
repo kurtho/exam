@@ -17,7 +17,8 @@ import SDWebImage
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var bookArray = [BookClass]()
-    
+    let books = BookClass()
+
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func writeData(sender: AnyObject) {
@@ -28,9 +29,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
     
+    @IBOutlet weak var addBook: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let ref = FIRDatabase.database().reference()
         print("REF~~~~~ \(ref)")
         let postRef = ref.child("bookCollection")
@@ -45,7 +49,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             book.bookName = (response.value?.objectForKey("bookName") as? String)!
             book.bookIntro = (response.value?.objectForKey("bookIntro") as? String)!
             book.bookPhone = (response.value?.objectForKey("bookPhone") as? String)!
-            print("123456~~\(book.bookAddress)")
+            book.bookWeb = (response.value?.objectForKey("bookWeb") as? String)!
+            
             self.bookArray.append(book)
             if let data = response.value {
                 
@@ -61,19 +66,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 for book in bookList {
                     print("house name \(book["Name"].stringValue)")
                     
-                    let books = BookClass()
-                    books.bookName = book["bookName"].stringValue
-                    books.bookAddress = book["bookAddress"].stringValue
-                    books.bookImage = book["bookImage"].stringValue
-                    self.bookArray.append(books)
+                    self.books.bookName = book["bookName"].stringValue
+                    self.books.bookAddress = book["bookAddress"].stringValue
+                    self.books.bookImage = book["bookImage"].stringValue
+                    self.books.bookPhone = book["bookPhone"].stringValue
+                    self.books.bookIntro = book["bookIntro"].stringValue
+                    self.books.bookWeb = book["bookWeb"].stringValue
+                    self.bookArray.append(self.books)
                     
                 }
             }
               self.tableView.reloadData()
             
         })
-//        print("bookArray ~~ \(self.bookArray)")
-//        self.tableView.reloadData()
+
     
     }
     
@@ -89,24 +95,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! BookTableViewCell
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! BookTableViewCell
             let url = NSURL(string: bookArray[indexPath.row].bookImage)
 
             cell.bookImage?.sd_setImageWithURL(url, placeholderImage: nil)
-        
             cell.bookName.text = bookArray[indexPath.row].bookName
             return cell
     }
     
-//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//
-//    }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            bookArray.removeAtIndex(indexPath.row)
+        }
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Cell" {
             let vc = segue.destinationViewController as! DetailBookTableViewController
             
-            vc.imageBook = bookArray
+//            vc.imageBook.image = bookArray
         }
     }
 
@@ -123,4 +131,6 @@ class BookClass {
     var bookIntro: String = ""
     var bookAddress: String = ""
     var bookPhone: String = ""
+    var bookWeb: String = ""
+
 }

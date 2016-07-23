@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import Firebase
+import Alamofire
+import SwiftyJSON
+import SDWebImage
+
 
 class AddBookViewController: UIViewController {
 
@@ -20,8 +25,16 @@ class AddBookViewController: UIViewController {
     
     @IBOutlet weak var webTextView: UITextField!
     
+    @IBOutlet weak var introTextView: UITextField!
     
     @IBAction func updateButton(sender: AnyObject) {
+        let ref = FIRDatabase.database().reference()
+        //        let postRef = ref.child("bookList1")
+        let postRef = ref.child("bookList3")
+        postRef.setValue(["bookAddress": addressTextView.text! , "bookImage": nameTextView.text!, "bookIntro": introTextView.text! , "bookName": nameTextView.text!, "bookPhone": phoneTextView.text!, "bookWeb": webTextView.text! 
+            ])
+        
+        
     }
     
     override func viewDidLoad() {
