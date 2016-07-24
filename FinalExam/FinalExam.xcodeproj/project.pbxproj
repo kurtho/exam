@@ -17,6 +17,8 @@
 		294FE1F91D41EDA900EAF8AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294FE1F71D41EDA900EAF8AD /* LaunchScreen.storyboard */; };
 		294FE2011D41EE2C00EAF8AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 294FE2001D41EE2C00EAF8AD /* GoogleService-Info.plist */; };
 		294FE2031D41F6A100EAF8AD /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FE2021D41F6A100EAF8AD /* BookTableViewCell.swift */; };
+		29EF25A21D449232005FBD3D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF25A11D449232005FBD3D /* MapViewController.swift */; };
+		29EF25C21D449BC7005FBD3D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF25C11D449BC7005FBD3D /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		294FE1FA1D41EDA900EAF8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		294FE2001D41EE2C00EAF8AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		294FE2021D41F6A100EAF8AD /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		29EF25A11D449232005FBD3D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		29EF25C11D449BC7005FBD3D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		5DC142E8A9A03FF315375E82 /* Pods_FinalExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,6 +79,8 @@
 				294FE2021D41F6A100EAF8AD /* BookTableViewCell.swift */,
 				293D7B591D4246DC005A87A0 /* AddBookViewController.swift */,
 				293D7B5B1D424D62005A87A0 /* DetailBookTableViewController.swift */,
+				29EF25C11D449BC7005FBD3D /* WebViewController.swift */,
+				29EF25A11D449232005FBD3D /* MapViewController.swift */,
 				294FE1F51D41EDA900EAF8AD /* Assets.xcassets */,
 				294FE1F71D41EDA900EAF8AD /* LaunchScreen.storyboard */,
 				294FE1FA1D41EDA900EAF8AD /* Info.plist */,
@@ -224,8 +230,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				294FE1F11D41EDA900EAF8AD /* ViewController.swift in Sources */,
+				29EF25A21D449232005FBD3D /* MapViewController.swift in Sources */,
 				293D7B5C1D424D62005A87A0 /* DetailBookTableViewController.swift in Sources */,
 				293D7B5A1D4246DC005A87A0 /* AddBookViewController.swift in Sources */,
+				29EF25C21D449BC7005FBD3D /* WebViewController.swift in Sources */,
 				294FE2031D41F6A100EAF8AD /* BookTableViewCell.swift in Sources */,
 				294FE1EF1D41EDA900EAF8AD /* AppDelegate.swift in Sources */,
 			);

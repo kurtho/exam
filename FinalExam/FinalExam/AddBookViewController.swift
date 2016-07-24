@@ -11,6 +11,7 @@ import Firebase
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import WebKit
 
 
 class AddBookViewController: UIViewController {
@@ -29,13 +30,21 @@ class AddBookViewController: UIViewController {
     
     @IBAction func updateButton(sender: AnyObject) {
         let ref = FIRDatabase.database().reference()
-        //        let postRef = ref.child("bookList1")
-        let postRef = ref.child("bookList3")
-        postRef.setValue(["bookAddress": addressTextView.text! , "bookImage": nameTextView.text!, "bookIntro": introTextView.text! , "bookName": nameTextView.text!, "bookPhone": phoneTextView.text!, "bookWeb": webTextView.text! 
+        let postRef = ref.child("bookCollection").childByAutoId()
+        postRef.setValue(["bookAddress": addressTextView.text! , "bookImage": ImageTextView.text!, "bookIntro": introTextView.text! , "bookName": nameTextView.text!, "bookPhone": phoneTextView.text!, "bookWeb": webTextView.text!
             ])
-        
-        
     }
+    
+    @IBAction func phoneCall(sender: AnyObject) {
+
+    }
+    
+    
+    @IBAction func map(sender: AnyObject) {
+    }
+    
+    @IBOutlet weak var web: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
