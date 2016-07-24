@@ -18,9 +18,10 @@ import SDWebImage
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var bookArray = [BookClass]()
     let books = BookClass()
-
+    let reFreshControl = UIRefreshControl()
+    
     @IBOutlet weak var tableView: UITableView!
-
+    
     @IBAction func writeData(sender: AnyObject) {
         let ref = FIRDatabase.database().reference()
 //        let postRef = ref.child("bookList1")
@@ -34,6 +35,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reFreshControl.addTarget(self, action: #selector(ViewController.refresh), forControlEvents: .ValueChanged)
+        self.tableView.addSubview(reFreshControl)
+        
+        
+        
+//refresh
         
         let ref = FIRDatabase.database().reference()
         print("REF~~~~~ \(ref)")
@@ -89,6 +96,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
 
+    
+//    refresh
+    
+    func refresh() {
+        self.tableView.reloadData()
+        self.reFreshControl.endRefreshing()
+    }
+    
+    
+    
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookArray.count
