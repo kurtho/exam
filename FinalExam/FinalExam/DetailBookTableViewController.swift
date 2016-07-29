@@ -17,17 +17,17 @@ class DetailBookTableViewController: UITableViewController {
     @IBOutlet weak var phoneBook: UILabel!
     @IBOutlet weak var introduction: UILabel!
 
-    var bookArray = [BookClass]()
-    
+//    var bookArray = [BookClass]()
+    var book = BookClass()
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let obj = bookArray[0]
-        let url = NSURL(string: obj.bookImage)
+//        let obj = bookArray[2]
+        let url = NSURL(string: book.bookImage)
         imageBook?.sd_setImageWithURL(url, placeholderImage: nil)
-
+        self.nameBook.text = book.bookName
         
         
 
