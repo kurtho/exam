@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DetailBookTableViewController: UITableViewController {
 
@@ -16,18 +17,21 @@ class DetailBookTableViewController: UITableViewController {
     @IBOutlet weak var phoneBook: UILabel!
     @IBOutlet weak var introduction: UILabel!
 
+    var bookArray = [BookClass]()
     
-    
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let obj = bookArray[0]
+        let url = NSURL(string: obj.bookImage)
+        imageBook?.sd_setImageWithURL(url, placeholderImage: nil)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
+        
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
     }
 
     override func didReceiveMemoryWarning() {

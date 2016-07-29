@@ -67,7 +67,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print("json~~~\(json)")
                 let bookList = json.arrayValue
                 
-//似乎是json的格式有問題，bookList 是空的
                 
                 print("put in bookList~~~~\(bookList)")
                 for book in bookList {
@@ -110,13 +109,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookArray.count
+        
     }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! BookTableViewCell
             let url = NSURL(string: bookArray[indexPath.row].bookImage)
-
-            cell.bookImage?.sd_setImageWithURL(url, placeholderImage: nil)
+        
+        
+        
+        cell.bookImage?.sd_setImageWithURL(url, placeholderImage: nil)
             cell.bookName.text = bookArray[indexPath.row].bookName
             return cell
     }
@@ -131,8 +134,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Cell" {
             let vc = segue.destinationViewController as! DetailBookTableViewController
+            vc.bookArray = bookArray
             
-//            vc.imageBook.image = bookArray
         }
     }
 
